@@ -8,6 +8,7 @@ use App\Http\Controllers\WargaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Guest\AuthController;
 use App\Http\Controllers\PoskoBencanaController;
+use App\Http\Controllers\Guest\TentangController;
 use App\Http\Controllers\Guest\KebencanaanController;
 
 // ------------------------
@@ -53,3 +54,6 @@ Route::resource('posko', PoskoBencanaController::class);
 
 Route::resource('user', UserController::class);
 Route::resource('login', LoginController::class)->only(['index', 'store', 'destroy']);
+
+
+Route::resource('tentang', TentangController::class)->only(['index']);

@@ -6,22 +6,27 @@
             <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav me-auto">
-                    <a href="dashboard" class="nav-item nav-link active">Home</a>
-                    <a href="warga" class="nav-item nav-link">Warga</a>
-                    <a href="posko" class="nav-item nav-link">Posko</a>
-                    <a href="user" class="nav-item nav-link">User</a>
+                    <a href="{{ url('dashboard') }}" class="nav-item nav-link {{ request()->is('dashboard') ? 'active' : '' }}">Home</a>
+                    <a href="{{ url('warga') }}" class="nav-item nav-link {{ request()->is('warga') ? 'active' : '' }}">Data Warga</a>
+                    <a href="{{ url('posko') }}" class="nav-item nav-link {{ request()->is('posko') ? 'active' : '' }}">Posko</a>
+                    <a href="{{ url('user') }}" class="nav-item nav-link {{ request()->is('user') ? 'active' : '' }}">Data User</a>
+
+                    {{-- ✅ Tambahkan menu Tentang di sini --}}
+                    <a href="{{ route('tentang.index') }}" class="nav-item nav-link {{ request()->is('tentang') ? 'active' : '' }}">Tentang</a>
                 </div>
-                <div class="d-none d-lg-flex ms-auto">
+
+                <div class="d-none d-lg-flex ms-auto align-items-center">
                     @if (session('success'))
-                        <div class="alert alert-success mt-3">{{ session('success') }}</div>
+                        <div class="alert alert-success mb-0 me-3 py-2 px-3">{{ session('success') }}</div>
                     @endif
 
-                    <p class="mt-3">Anda berhasil login!</p>
-                    <a class="btn btn-square btn-dark ms-2" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-dark ms-2" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-dark ms-2" href=""><i class="fab fa-youtube"></i></a>
+                    <p class="text-white mb-0 me-3">Anda berhasil login!</p>
+                    <a class="btn btn-square btn-dark ms-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-square btn-dark ms-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square btn-dark ms-2" href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </nav>
