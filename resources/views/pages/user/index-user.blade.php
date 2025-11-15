@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.guest2.app')
 
 @section('title', 'Data User')
 
