@@ -12,6 +12,7 @@
                     <a href="{{ url('dashboard') }}" class="nav-item nav-link {{ request()->is('dashboard') ? 'active' : '' }}">Home</a>
                     <a href="{{ url('warga') }}" class="nav-item nav-link {{ request()->is('warga') ? 'active' : '' }}">Data Warga</a>
                     <a href="{{ url('posko') }}" class="nav-item nav-link {{ request()->is('posko') ? 'active' : '' }}">Posko</a>
+                    <a href="{{ url('kejadian') }}" class="nav-item nav-link {{ request()->is('kejadian') ? 'active' : '' }}">Kejadian</a>
                     <a href="{{ url('user') }}" class="nav-item nav-link {{ request()->is('user') ? 'active' : '' }}">Data User</a>
 
                     {{-- ✅ Tambahkan menu Tentang di sini --}}

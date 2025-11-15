@@ -16,15 +16,24 @@
             @method('PUT')
         @endif
 
+        {{-- KEJADIAN RELATION --}}
         <div class="mb-3">
             <label class="form-label">
-                <i class="bi bi-123"></i> Kejadian ID
+                <i class="bi bi-exclamation-triangle-fill"></i> Kejadian Bencana
             </label>
-            <input type="number" name="kejadian_id" class="form-control"
-                   value="{{ old('kejadian_id', $posko->kejadian_id ?? '') }}">
+            <select name="kejadian_id" class="form-control">
+                <option value="">-- Pilih Kejadian --</option>
+                @foreach ($kejadian as $k)
+                    <option value="{{ $k->kejadian_id }}"
+                        {{ old('kejadian_id', $posko->kejadian_id ?? '') == $k->kejadian_id ? 'selected' : '' }}>
+                        {{ $k->jenis_bencana }} - {{ $k->tanggal }} - {{ $k->lokasi_text }}
+                    </option>
+                @endforeach
+            </select>
             @error('kejadian_id') <small class="text-danger">{{ $message }}</small> @enderror
         </div>
 
+        {{-- NAMA POSKO --}}
         <div class="mb-3">
             <label class="form-label">
                 <i class="bi bi-house-door-fill"></i> Nama Posko
@@ -34,6 +43,7 @@
             @error('nama') <small class="text-danger">{{ $message }}</small> @enderror
         </div>
 
+        {{-- ALAMAT --}}
         <div class="mb-3">
             <label class="form-label">
                 <i class="bi bi-geo-alt-fill"></i> Alamat
@@ -42,6 +52,7 @@
             @error('alamat') <small class="text-danger">{{ $message }}</small> @enderror
         </div>
 
+        {{-- KONTAK --}}
         <div class="mb-3">
             <label class="form-label">
                 <i class="bi bi-telephone-fill"></i> Kontak
@@ -51,6 +62,7 @@
             @error('kontak') <small class="text-danger">{{ $message }}</small> @enderror
         </div>
 
+        {{-- PENANGGUNG JAWAB --}}
         <div class="mb-3">
             <label class="form-label">
                 <i class="bi bi-person-fill-gear"></i> Penanggung Jawab
@@ -60,14 +72,18 @@
             @error('penanggung_jawab') <small class="text-danger">{{ $message }}</small> @enderror
         </div>
 
+        {{-- FOTO POSKO --}}
         <div class="mb-3">
             <label class="form-label">
                 <i class="bi bi-image-fill"></i> Foto Posko
             </label>
             <input type="file" name="foto" class="form-control">
+
             @if(isset($posko) && $posko->foto)
-                <img src="{{ asset('storage/' . $posko->foto) }}" width="120" class="mt-2 rounded border">
+                <img src="{{ asset('storage/' . $posko->foto) }}" width="120"
+                     class="mt-2 rounded border">
             @endif
+
             @error('foto') <small class="text-danger">{{ $message }}</small> @enderror
         </div>
 
@@ -91,7 +107,6 @@
         background-size: cover;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
     form {
         background: rgba(255, 255, 255, 0.95);
         padding: 30px;
@@ -100,31 +115,6 @@
         backdrop-filter: blur(6px);
         margin-bottom: 60px;
         border: 1px solid #c8e6c9;
-    }
-
-    .btn-success {
-        background-color: #43a047;
-        border-color: #388e3c;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-    }
-
-    .btn-success:hover {
-        background-color: #2e7d32;
-        transform: scale(1.05);
-    }
-
-    .btn-secondary {
-        background-color: #ffa726;
-        border-color: #fb8c00;
-        color: #fff;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-    }
-
-    .btn-secondary:hover {
-        background-color: #fb8c00;
-        transform: scale(1.05);
     }
 </style>
 @endpush

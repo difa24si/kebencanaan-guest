@@ -22,7 +22,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Jika ada tabel kejadian, aktifkan relasi berikut:
-            // $table->foreign('kejadian_id')->references('id')->on('kejadian')->onDelete('set null');
+             $table->foreign('kejadian_id')->references('kejadian_id')->on('kejadian')->onDelete('set null');
         });
     }
 

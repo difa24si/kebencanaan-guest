@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Guest\AuthController;
 use App\Http\Controllers\PoskoBencanaController;
 use App\Http\Controllers\Guest\TentangController;
+use App\Http\Controllers\KejadianBencanaController;
 use App\Http\Controllers\Guest\KebencanaanController;
 
 // ------------------------
@@ -30,8 +31,8 @@ Route::get('/nim/{param1?}', function ($param1 = '') {
     return 'NIM saya: '.$param1;
 });
 
-Route::get('/about', function () {
-    return view('halaman-about');
+Route::get('/', function () {
+    return view('pages.main.dashboard');
 });
 
 // ------------------------
@@ -57,3 +58,6 @@ Route::resource('login', LoginController::class)->only(['index', 'store', 'destr
 
 
 Route::resource('tentang', TentangController::class)->only(['index']);
+
+//Kejadian Route
+Route::resource('kejadian', KejadianBencanaController::class);
