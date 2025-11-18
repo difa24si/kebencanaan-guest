@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('posko_bencana', function (Blueprint $table) {
-            $table->id();
+            $table->id('posko_id'); // Jika ingin konsisten, boleh pakai id custom
             $table->unsignedBigInteger('kejadian_id')->nullable()->comment('Relasi ke tabel kejadian');
             $table->string('nama', 100);
             $table->text('alamat');
@@ -21,9 +21,14 @@ return new class extends Migration
             $table->string('foto')->nullable();
             $table->timestamps();
 
-            // Jika ada tabel kejadian, aktifkan relasi berikut:
-             $table->foreign('kejadian_id')->references('kejadian_id')->on('kejadian')->onDelete('set null');
+            // Relasi foreign key
+            $table->foreign('kejadian_id')
+                ->references('kejadian_id')
+                ->on('kejadian_bencana')
+                ->onUpdate('cascade')
+                  ->onDelete('cascade');
         });
+
     }
 
     /**
