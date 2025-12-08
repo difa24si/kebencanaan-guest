@@ -16,15 +16,18 @@ class CreatePoskoBencanaDummy extends Seeder
     {
         $faker = Faker::create('id_ID');
 
-
+        // Ambil semua kejadian_id dari tabel kejadian_bencana
         $kejadianIDs = DB::table('kejadian_bencana')->pluck('kejadian_id')->toArray();
 
-       
+        // Kalau kosong, hentikan
         if (empty($kejadianIDs)) {
             return;
         }
 
-        for ($i = 1; $i <= 15; $i++) {
+        // Jumlah data acak antara 30 - 100
+        $jumlahData = rand(30, 100);
+
+        for ($i = 1; $i <= $jumlahData; $i++) {
             DB::table('posko_bencana')->insert([
                 'kejadian_id'       => $faker->randomElement($kejadianIDs),
                 'nama'              => 'Posko ' . $faker->citySuffix,

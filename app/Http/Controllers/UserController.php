@@ -34,64 +34,54 @@ class UserController extends Controller
         return view('pages.user.form-user');
     }
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name'     => 'required|string|max:100',
-            'email'    => 'required|email|unique:users,email',
-            'password' => 'required|confirmed|min:6',
+   public function store(Request $request)
+{
+    $validated = $request->validate([
+        'name' => 'required',
+        'email' => 'required|email',
+        'password' => 'required|min:6',
+        'photo' => 'image|mimes:jpg,jpeg,png|max:2048',
+    ]);
 
-            // ➕ TAMBAHAN VALIDASI ROLE
-            'role'     => 'required|in:admin,user',
-        ]);
-
-        User::create([
-            'name'     => $request->name,
-            'email'    => $request->email,
-            'password' => Hash::make($request->password),
-
-            // ➕ TAMBAHAN SIMPAN ROLE
-            'role'     => $request->role,
-        ]);
-
-        return redirect()->route('user.index')->with('success', 'User berhasil ditambahkan!');
+    if ($request->hasFile('photo')) {
+        $validated['photo'] = $request->file('photo')->store('profile', 'public');
     }
 
+    $validated['password'] = bcrypt($validated['password']);
+
+    User::create($validated);
+
+    return redirect()->route('user.index')->with('success', 'User berhasil dibuat');
+}
     public function edit($id)
     {
         $user = User::findOrFail($id);
         return view('pages.user.form-user', compact('user'));
     }
 
-    public function update(Request $request, $id)
-    {
-        $user = User::findOrFail($id);
+    public function update(Request $request, User $user)
+{
+    $validated = $request->validate([
+        'name' => 'required',
+        'email' => 'required|email',
+        'photo' => 'image|mimes:jpg,jpeg,png|max:2048',
+    ]);
 
-        $rules = [
-            'name'  => 'required|string|max:100',
-            'email' => 'required|email|unique:users,email,' . $id,
+    // HAPUS FOTO LAMA JIKA ADA
+    if ($request->hasFile('photo')) {
 
-            // ➕ TAMBAHAN VALIDASI ROLE
-            'role'  => 'required|in:admin,user',
-        ];
-
-        if ($request->filled('password')) {
-            $rules['password'] = 'confirmed|min:6';
+        if ($user->photo && file_exists(storage_path('app/public/' . $user->photo))) {
+            unlink(storage_path('app/public/' . $user->photo));
         }
 
-        $request->validate($rules);
-
-        $data = $request->only(['name', 'email', 'role']);
-        // role otomatis ikut karena kita tambahkan di sini
-
-        if ($request->filled('password')) {
-            $data['password'] = Hash::make($request->password);
-        }
-
-        $user->update($data);
-
-        return redirect()->route('user.index')->with('success', 'User berhasil diperbarui!');
+        $validated['photo'] = $request->file('photo')->store('profile', 'public');
     }
+
+    $user->update($validated);
+
+    return redirect()->route('user.index')->with('success', 'User berhasil diupdate');
+}
+
 
     public function destroy($id)
     {

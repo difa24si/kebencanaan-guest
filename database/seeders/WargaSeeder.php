@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Warga;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class WargaSeeder extends Seeder
 {
@@ -14,23 +13,27 @@ class WargaSeeder extends Seeder
      */
     public function run(): void
     {
-         $faker = Faker::create('id_ID'); // Faker Indonesia
+        $faker = Faker::create('id_ID'); // Faker Indonesia
 
-        for ($i = 1; $i <= 100; $i++) {
+        // Jumlah data acak antara 30 - 100
+        $jumlahData = rand(30, 100);
+
+        for ($i = 1; $i <= $jumlahData; $i++) {
 
             Warga::create([
-                'no_ktp' => $faker->unique()->numerify('################'), // 16 digit
+                'no_ktp' => $faker->unique()->numerify('################'), // 16 digit random
                 'nama'   => $faker->name,
                 'gender' => $faker->randomElement(['Laki-laki', 'Perempuan']),
-                'agama'  => $faker->randomElement(['Islam', 'Kristen', 'Katolik', 'Hindu', 'Buddha', 'Konghucu']),
+                'agama'  => $faker->randomElement([
+                    'Islam', 'Kristen', 'Katolik', 'Hindu', 'Buddha', 'Konghucu'
+                ]),
                 'pekerjaan' => $faker->randomElement([
                     'Petani', 'Karyawan Swasta', 'Wirausaha', 'PNS',
                     'Guru', 'Mahasiswa', 'Tidak Bekerja'
                 ]),
                 'phone'  => $faker->phoneNumber,
-                'email'  => $faker->unique()->safeEmail,
+                'email'  => $faker->unique()->safeEmail(),
             ]);
         }
     }
-    }
-
+}

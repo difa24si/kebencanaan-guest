@@ -478,188 +478,46 @@
 
 
     <!-- Team Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
-                <p class="section-title bg-white text-center text-primary px-3">Our Team</p>
-                <h1 class="display-6 mb-4">Meet Our Dedicated Team Members</h1>
+    <!-- Developer Profile Section Start -->
+<div class="container-fluid bg-dark text-light py-5">
+    <div class="container">
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-4 text-center">
+                <img src="{{ asset('assets-guest/img/profile.jpg') }}"
+                     alt="Foto Pengembang"
+                     class="img-fluid rounded-circle shadow"
+                     style="width: 200px; height: 200px; object-fit: cover;">
             </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="team-item d-flex h-100 p-4">
-                        <div class="team-detail pe-4">
-                            <img class="img-fluid mb-4" src="img/team-1.jpg" alt="">
-                            <h3>Boris Johnson</h3>
-                            <span>Founder & CEO</span>
-                        </div>
-                        <div class="team-social bg-light d-flex flex-column justify-content-center flex-shrink-0 p-4">
-                            <a class="btn btn-square btn-primary my-2" href=""><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary my-2" href=""><i
-                                    class="fab fa-x-twitter"></i></a>
-                            <a class="btn btn-square btn-primary my-2" href=""><i
-                                    class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square btn-primary my-2" href=""><i
-                                    class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
-                    <div class="team-item d-flex h-100 p-4">
-                        <div class="team-detail pe-4">
-                            <img class="img-fluid mb-4" src="img/team-2.jpg" alt="">
-                            <h3>Donald Pakura</h3>
-                            <span>Project Manager</span>
-                        </div>
-                        <div class="team-social bg-light d-flex flex-column justify-content-center flex-shrink-0 p-4">
-                            <a class="btn btn-square btn-primary my-2" href=""><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary my-2" href=""><i
-                                    class="fab fa-x-twitter"></i></a>
-                            <a class="btn btn-square btn-primary my-2" href=""><i
-                                    class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square btn-primary my-2" href=""><i
-                                    class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="team-item d-flex h-100 p-4">
-                        <div class="team-detail pe-4">
-                            <img class="img-fluid mb-4" src="img/team-3.jpg" alt="">
-                            <h3>Alexander Bell</h3>
-                            <span>Volunteer</span>
-                        </div>
-                        <div class="team-social bg-light d-flex flex-column justify-content-center flex-shrink-0 p-4">
-                            <a class="btn btn-square btn-primary my-2" href=""><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary my-2" href=""><i
-                                    class="fab fa-x-twitter"></i></a>
-                            <a class="btn btn-square btn-primary my-2" href=""><i
-                                    class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square btn-primary my-2" href=""><i
-                                    class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
+
+            <div class="col-lg-8">
+                <h3 class="text-light mb-3">Identitas Pengembang</h3>
+                <p class="mb-1"><strong>Nama :</strong> Difa Mardiani</p>
+                <p class="mb-1"><strong>NIM :</strong> 2457301034</p>
+                <p class="mb-1"><strong>Program Studi :</strong> Sistem Informasi</p>
+                <p class="mb-3"><strong>Kampus :</strong> Politeknik Caltex Riau</p>
+
+                <div class="d-flex align-items-center mt-3 flex-wrap">
+
+                    <a href="#" class="https://www.linkedin.com/in/difa-mardiani-4464a6399?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank">
+                        <i class="fab fa-linkedin me-2"></i>LinkedIn
+                    </a>
+
+                    <a href="#" class="https://github.com/difa24si/kebencanaan-guest.git" target="_blank">
+                        <i class="fab fa-github me-2"></i>GitHub
+                    </a>
+
+                    <a href="#" class="https://www.instagram.com/dpakepsyc?igsh=MWdnbXpuanVyNHp0Ng%3D%3D&utm_source=qr" target="_blank">
+                        <i class="fab fa-instagram me-2"></i>Instagram
+                    </a>
+
                 </div>
             </div>
+
         </div>
     </div>
+</div>
+<!-- Developer Profile Section End -->
+
     <!-- Team End -->
-
-
-    <!-- Testimonial Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-md-12 col-lg-4 col-xl-3 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="testimonial-title">
-                        <h1 class="display-6 mb-4">What People Say About Our Activities.</h1>
-                        <p class="fs-5 mb-0">We work to bring smiles, hope, and a brighter future to those in need.</p>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-8 col-xl-9">
-                    <div class="owl-carousel testimonial-carousel wow fadeIn" data-wow-delay="0.3s">
-                        <div class="testimonial-item">
-                            <div class="row g-5 align-items-center">
-                                <div class="col-md-6">
-                                    <div class="testimonial-img">
-                                        <img class="img-fluid" src="img/testimonial-1.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="testimonial-text pb-5 pb-md-0">
-                                        <div class="mb-2">
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                        </div>
-                                        <p class="fs-5">Education is the foundation of change. By funding schools,
-                                            scholarships, and training programs, we can help children and adults unlock
-                                            their potential for a better future.</p>
-                                        <div class="d-flex align-items-center">
-                                            <div class="btn-lg-square bg-light text-secondary flex-shrink-0">
-                                                <i class="fa fa-quote-right fa-2x"></i>
-                                            </div>
-                                            <div class="ps-3">
-                                                <h5 class="mb-0">Alexander Bell</h5>
-                                                <span>CEO, Founder</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-item">
-                            <div class="row g-5 align-items-center">
-                                <div class="col-md-6">
-                                    <div class="testimonial-img">
-                                        <img class="img-fluid" src="img/testimonial-2.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="testimonial-text pb-5 pb-md-0">
-                                        <div class="mb-2">
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                        </div>
-                                        <p class="fs-5">Every hand extended in kindness brings us closer to a world
-                                            free from suffering. Be part of a global movement dedicated to building a
-                                            future where equality and compassion thrive.</p>
-                                        <div class="d-flex align-items-center">
-                                            <div class="btn-lg-square bg-light text-secondary flex-shrink-0">
-                                                <i class="fa fa-quote-right fa-2x"></i>
-                                            </div>
-                                            <div class="ps-3">
-                                                <h5 class="mb-0">Donald Pakura</h5>
-                                                <span>CEO, Founder</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-item">
-                            <div class="row g-5 align-items-center">
-                                <div class="col-md-6">
-                                    <div class="testimonial-img">
-                                        <img class="img-fluid" src="img/testimonial-3.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="testimonial-text pb-5 pb-md-0">
-                                        <div class="mb-2">
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                        </div>
-                                        <p class="fs-5">Love and compassion have the power to heal. Through your
-                                            donations and volunteer work, we can spread kindness and support to
-                                            children, families, and communities struggling to find stability.</p>
-                                        <div class="d-flex align-items-center">
-                                            <div class="btn-lg-square bg-light text-secondary flex-shrink-0">
-                                                <i class="fa fa-quote-right fa-2x"></i>
-                                            </div>
-                                            <div class="ps-3">
-                                                <h5 class="mb-0">Boris Johnson</h5>
-                                                <span>CEO, Founder</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
 @endsection

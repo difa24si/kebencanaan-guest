@@ -63,3 +63,5 @@ Route::resource('donasi', DonasiController::class);
 // Tambahkan route detail manual
 Route::get('/donasi/detail/{id}', [DonasiController::class, 'detail'])
     ->name('donasi.detail');
+
+

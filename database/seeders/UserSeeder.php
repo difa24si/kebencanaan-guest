@@ -13,7 +13,10 @@ class UserSeeder extends Seeder
     {
         $faker = Faker::create('id_ID');
 
-        for ($i = 0; $i < 100; $i++) {
+        // Jumlah user random antara 30 - 100
+        $jumlahUser = rand(30, 100);
+
+        for ($i = 0; $i < $jumlahUser; $i++) {
             User::create([
                 'name'     => $faker->name(),
                 'email'    => $faker->unique()->safeEmail(),

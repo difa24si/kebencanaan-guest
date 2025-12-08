@@ -29,7 +29,10 @@ class CreateKejadianBencanaDummy extends Seeder
 
         $status = ['Ringan', 'Sedang', 'Berat', 'Selesai'];
 
-        for ($i = 1; $i <= 10; $i++) {
+        // Jumlah data acak antara 30 - 100
+        $jumlahData = rand(30, 100);
+
+        for ($i = 1; $i <= $jumlahData; $i++) {
             DB::table('kejadian_bencana')->insert([
                 'jenis_bencana'   => $faker->randomElement($jenisBencana),
                 'tanggal'         => $faker->dateTimeBetween('-1 years', 'now')->format('Y-m-d'),
