@@ -2,26 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class KejadianBencana extends Model
 {
+    use HasFactory;
+
     protected $table = 'kejadian_bencana';
-    protected $primaryKey = 'kejadian_id';
 
     protected $fillable = [
-        'jenis_bencana',
+        'nama_bencana',
+        'lokasi',
         'tanggal',
-        'lokasi_text',
-        'rt',
-        'rw',
-        'dampak',
-        'status_kejadian',
-        'keterangan',
     ];
-
-    public function donasi()
-    {
-        return $this->hasMany(DonasiBencana::class, 'kejadian_id', 'kejadian_id');
-    }
 }

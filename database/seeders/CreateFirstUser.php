@@ -18,7 +18,7 @@ class CreateFirstUser extends Seeder
                 'name' => 'difa',
                 'email' => 'difa24si@mahasiswa.pcr.ac.id',
                 'role' => 'admin',
-                'password' => Hash::make('Difasi123'),
+                'password' => Hash::make('difafarel'),
             ]);
     }
 }

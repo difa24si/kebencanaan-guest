@@ -51,6 +51,13 @@
                         class="nav-item nav-link {{ request()->is('tentang') ? 'active' : '' }}">
                         Tentang
                     </a>
+                    <a href="{{ route('logistik.index') }}"
+                        class="nav-item nav-link {{ request()->is('logistik') ? 'active' : '' }}">
+                        Logistik Bencana
+                    </a>
+                     <a href="{{ route('distribusi-logistik.index') }}"
+                        class="nav-item nav-link {{ request()->is('distribusi') ? 'active' : '' }}">
+                        Distribusi Logistik
                 </div>
 
                 <!-- RIGHT PANEL -->
