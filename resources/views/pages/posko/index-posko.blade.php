@@ -3,22 +3,22 @@
 @section('title', 'Data Posko Bencana')
 
 @section('content')
-    <a href="{{ route('dashboard.index') }}" class="btn btn-success">
+    <a href="{{ route('dashboard.index') }}" class="btn btn-success mb-3">
         <i class="bi bi-arrow-left-circle"></i> Kembali
     </a>
-    <a href="{{ route('posko.create') }}" class="btn btn-warning float-end">
+
+    <a href="{{ route('posko.create') }}" class="btn btn-warning float-end mb-3">
         <i class="bi bi-plus-circle"></i> Tambah Posko
     </a>
 
     <div class="container-box mt-4 bg-light rounded shadow-sm p-4">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h4 class="fw-bold text-success">
-                <i class="bi bi-building"></i> Data Posko Bencana
-            </h4>
-        </div>
+
+        <h4 class="fw-bold text-success mb-4">
+            <i class="bi bi-building"></i> Data Posko Bencana
+        </h4>
 
         <!-- SEARCH & FILTER -->
-        <form method="GET" action="{{ route('posko.index') }}" class="row mb-4">
+        <form method="GET" action="{{ route('posko.index') }}" class="row g-2 mb-4">
 
             <div class="col-md-4">
                 <input type="text" name="search" class="form-control"
@@ -49,31 +49,48 @@
                     <i class="bi bi-x-circle"></i> Reset
                 </a>
             </div>
+
         </form>
 
+        <!-- CARD LIST -->
         <div class="row">
             @foreach ($posko as $p)
                 <div class="col-md-4 mb-4">
-                    <div class="card border-0 shadow-sm">
+                    <div class="card border-0 shadow-sm h-100">
                         <div class="card-body text-center">
-                            <div class="rounded-circle bg-success text-white fw-bold d-flex align-items-center justify-content-center mx-auto mb-2"
-                                 style="width:70px; height:70px;">
-                                {{ strtoupper(substr($p->nama, 0, 2)) }}
+
+                            <!-- AVATAR -->
+                            <div class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center fw-bold text-white"
+                                 style="
+                                    width:70px;
+                                    height:70px;
+                                    background-color:#198754;
+                                    font-size:20px;
+                                    {{ $p->foto ? 'background-image:url(' . asset('storage/' . $p->foto) . ');background-size:cover;background-position:center;color:transparent;' : '' }}
+                                 ">
+                                @if(!$p->foto)
+                                    {{ strtoupper(substr($p->nama, 0, 2)) }}
+                                @endif
                             </div>
+
                             <h5 class="fw-bold">{{ $p->nama }}</h5>
+
                             <p class="text-muted mb-1">
-                                <i class="bi bi-geo-alt-fill text-success"></i> Alamat: {{ $p->alamat }}
+                                <i class="bi bi-geo-alt-fill text-success"></i>
+                                Alamat: {{ $p->alamat }}
                             </p>
+
                             <p class="text-muted mb-1">
-                                <i class="bi bi-telephone-fill text-primary"></i> Kontak: {{ $p->kontak }}
+                                <i class="bi bi-telephone-fill text-primary"></i>
+                                Kontak: {{ $p->kontak }}
                             </p>
+
                             <p class="text-muted mb-2">
                                 <i class="bi bi-person-fill text-warning"></i>
-                                Penanggung Jawab: <strong>{{ $p->penanggung_jawab }}</strong>
+                                Penanggung Jawab:
+                                <strong>{{ $p->penanggung_jawab }}</strong>
                             </p>
-                            @if ($p->foto)
-                                <img src="{{ asset('storage/' . $p->foto) }}" class="img-fluid rounded" alt="Foto Posko">
-                            @endif
+
                         </div>
                     </div>
                 </div>
@@ -82,7 +99,7 @@
 
         <!-- PAGINATION -->
         <div class="d-flex justify-content-center mt-3">
-            {{ $posko->links() }}
+            {{ $posko->links('pagination::bootstrap-5') }}
         </div>
 
     </div>

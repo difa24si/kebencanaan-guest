@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Media extends Model
 {
+    use HasFactory;
+
     protected $table = 'media';
     protected $primaryKey = 'media_id';
 
@@ -15,6 +18,6 @@ class Media extends Model
         'file_name',
         'caption',
         'mime_type',
-        'sort_order'
+        'sort_order',
     ];
 }

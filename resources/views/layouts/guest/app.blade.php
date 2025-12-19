@@ -31,10 +31,10 @@
     {{-- Footer --}}
     @include('layouts.guest.footer')
 
-    {{-- Back to Top --}}
+    {{-- Back to Top
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
         <i class="bi bi-arrow-up"></i>
-    </a>
+    </a> --}}
 
     {{-- Floating WhatsApp --}}
     <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20ingin%20bertanya."

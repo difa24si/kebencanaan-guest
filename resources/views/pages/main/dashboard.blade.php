@@ -1,6 +1,57 @@
 @extends('layouts.guest.app')
 
 @section('content')
+    {{-- <div id="carouselIndonesia" class="carousel slide mb-4" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <img src="https://i.ibb.co/xFD7VvX/indonesia-komodo.jpg" class="d-block w-100"
+                    style="height: 380px; object-fit: cover;" alt="Komodo Indonesia">
+                <div class="carousel-caption bg-dark bg-opacity-50 rounded p-2">
+                    <h5>Pulau Komodo – NTT</h5>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <img src="https://i.ibb.co/6P24h7F/borobudur.jpg" class="d-block w-100"
+                    style="height: 380px; object-fit: cover;" alt="Candi Borobudur">
+                <div class="carousel-caption bg-dark bg-opacity-50 rounded p-2">
+                    <h5>Candi Borobudur – Magelang</h5>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <img src="https://i.ibb.co/r3wypHv/raja-ampat.jpg" class="d-block w-100"
+                    style="height: 380px; object-fit: cover;" alt="Raja Ampat">
+                <div class="carousel-caption bg-dark bg-opacity-50 rounded p-2">
+                    <h5>Raja Ampat – Papua Barat</h5>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="carousel-item">
+                <img src="https://i.ibb.co/93pFdcL/bromo.jpg" class="d-block w-100"
+                    style="height: 380px; object-fit: cover;" alt="Gunung Bromo">
+                <div class="carousel-caption bg-dark bg-opacity-50 rounded p-2">
+                    <h5>Gunung Bromo – Jawa Timur</h5>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndonesia" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselIndonesia" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div> --}}
+
     <!-- Carousel Start -->
     <div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
         <div class="owl-carousel header-carousel py-5">
@@ -11,14 +62,14 @@
                             <h1 class="display-1 text-uppercase mb-3">Bantuan Kebencanaan</h1>
                             <p class="fs-5 mb-5">Siaga, Tanggap, dan Tangguh Bersama.</p>
                             <div class="d-flex">
-                                <a class="btn btn-primary py-3 px-4 me-3" href="">Donate Now</a>
-                                <a class="btn btn-secondary py-3 px-4" href="">Join Us Now</a>
+                                <a class="btn btn-primary py-3 px-4 me-3" href="{{ url('donasi') }}">Donate Now</a>
+                                <a class="btn btn-secondary py-3 px-4" href="{{ route('user.index') }}">Join Us Now</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="carousel-img">
-                            <img class="w-100" src="{{ asset('assets-guest/img/carousel-1.jpg') }}" alt="Image">
+                            <img class="w-100" src="{{ asset('assets-guest/img/bencana2.jpg') }}" alt="Image">
                         </div>
                     </div>
                 </div>
@@ -36,7 +87,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="carousel-img">
-                            <img class="w-100" src="{{ asset('assets-guest/img/carousel-2.jpg') }}" alt="Image">
+                            <img class="w-100" src="{{ asset('assets-guest/img/bencana3.jpeg') }}" alt="Image">
                         </div>
                     </div>
                 </div>
@@ -177,7 +228,9 @@
                 <div class="col-lg-6">
                     <div class="feature-text ps-lg-5">
                         <h1 class="display-6 mb-4">How We Help Victims</h1>
-                        <p class="fs-5 mb-4">We help build hope by providing humanitarian support in times of need. We strive to create sustainable solutions that empower communities to grow, rebuild, and thrive.</p>
+                        <p class="fs-5 mb-4">We help build hope by providing humanitarian support in times of need. We
+                            strive to create sustainable solutions that empower communities to grow, rebuild, and thrive.
+                        </p>
                         <div class="d-flex">
                             <a class="btn btn-primary py-3 px-4 me-3" href="">Learn More</a>
                             <a class="btn btn-secondary py-3 px-4" href="">Donate Now</a>
@@ -200,11 +253,10 @@
                     <a class="btn btn-primary py-3 px-4" href="{{ route('logistik.index') }}">Lihat Dashboard Logistik</a>
                 </div>
                 <div class="col-lg-6">
-                    <img class="img-fluid" src="{{ asset('assets-guest/img/logistics.jpg') }}" alt="Logistik Image">
+                    <img class="img-fluid" src="{{ asset('assets-guest/img/logistics.jpeg') }}" alt="Logistik Image">
                 </div>
             </div>
         </div>
     </div>
     <!-- Logistik End -->
-
 @endsection

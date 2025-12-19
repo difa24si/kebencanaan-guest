@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -15,10 +16,22 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
-        'photo',
     ];
 
     protected $hidden = [
         'password',
     ];
+
+    // ✅ RELASI MEDIA (FOTO PROFIL)
+    public function media()
+    {
+        return $this->hasMany(Media::class, 'ref_id', 'id')
+                    ->where('ref_table', 'users');
+    }
+
+    // ✅ helper ambil 1 foto profil
+    public function photo()
+    {
+        return $this->media()->orderBy('sort_order')->first();
+    }
 }

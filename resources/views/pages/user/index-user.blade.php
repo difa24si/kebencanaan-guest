@@ -3,57 +3,6 @@
 @section('title', 'Data User')
 
 @section('content')
-<div id="carouselIndonesia" class="carousel slide mb-4" data-bs-ride="carousel">
-    <div class="carousel-inner">
-
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
-            <img src="https://i.ibb.co/xFD7VvX/indonesia-komodo.jpg" class="d-block w-100"
-                 style="height: 380px; object-fit: cover;" alt="Komodo Indonesia">
-            <div class="carousel-caption bg-dark bg-opacity-50 rounded p-2">
-                <h5>Pulau Komodo – NTT</h5>
-            </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-            <img src="https://i.ibb.co/6P24h7F/borobudur.jpg" class="d-block w-100"
-                 style="height: 380px; object-fit: cover;" alt="Candi Borobudur">
-            <div class="carousel-caption bg-dark bg-opacity-50 rounded p-2">
-                <h5>Candi Borobudur – Magelang</h5>
-            </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item">
-            <img src="https://i.ibb.co/r3wypHv/raja-ampat.jpg" class="d-block w-100"
-                 style="height: 380px; object-fit: cover;" alt="Raja Ampat">
-            <div class="carousel-caption bg-dark bg-opacity-50 rounded p-2">
-                <h5>Raja Ampat – Papua Barat</h5>
-            </div>
-        </div>
-
-        <!-- Slide 4 -->
-        <div class="carousel-item">
-            <img src="https://i.ibb.co/93pFdcL/bromo.jpg" class="d-block w-100"
-                 style="height: 380px; object-fit: cover;" alt="Gunung Bromo">
-            <div class="carousel-caption bg-dark bg-opacity-50 rounded p-2">
-                <h5>Gunung Bromo – Jawa Timur</h5>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndonesia" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-    </button>
-
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselIndonesia" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-    </button>
-</div>
-
     <div class="container mt-4">
 
         <h2 class="text-center text-success fw-bold mb-4">Data User</h2>
@@ -117,16 +66,12 @@
                         <div class="card-body">
 
                             {{-- FOTO PROFIL --}}
-                            @if ($item->photo)
-                                <img src="{{ asset('storage/' . $item->photo) }}"
-                                     class="rounded-circle mb-3"
-                                     width="90" height="90"
-                                     style="object-fit: cover;">
+                            @if ($item->photo())
+                                <img src="{{ asset('storage/' . $item->photo()->file_name) }}" class="rounded-circle mb-3"
+                                    width="90" height="90" style="object-fit: cover;">
                             @else
-                                <img src="{{ asset('assets/img/placeholder.png') }}"
-                                     class="rounded-circle mb-3"
-                                     width="90" height="90"
-                                     style="object-fit: cover;">
+                                <img src="{{ asset('assets-guest/img/placeholder.jpeg') }}" class="rounded-circle mb-3"
+                                    width="90" height="90" style="object-fit: cover;">
                             @endif
 
                             <h6 class="fw-semibold text-success">{{ $item->name }}</h6>

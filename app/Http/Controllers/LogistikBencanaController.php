@@ -1,43 +1,47 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\LogistikBencana;
 use App\Models\KejadianBencana;
+use App\Models\LogistikBencana;
+use Illuminate\Http\Request;
 
 class LogistikBencanaController extends Controller
 {
-    // 🔹 tampilkan data logistik
-    public function index()
+    public function index(Request $request)
     {
-        // ambil semua logistik beserta relasi kejadian
-        $logistik = LogistikBencana::with('kejadian')->get();
+        $query = LogistikBencana::with('kejadian');
 
-        // ambil semua kejadian (untuk dropdown atau tampilan lain di view)
+        if ($request->search) {
+            $query->where(function ($q) use ($request) {
+                $q->where('nama_barang', 'like', '%' . $request->search . '%')
+                    ->orWhere('sumber', 'like', '%' . $request->search . '%');
+            });
+        }
+
+        if ($request->kejadian_id) {
+            $query->where('kejadian_id', $request->kejadian_id);
+        }
+
+        $logistik = $query->get();
         $kejadian = KejadianBencana::all();
 
-        // kirim kedua variabel ke view
         return view('pages.logistik.index', compact('logistik', 'kejadian'));
     }
 
-    // 🔹 form tambah logistik
     public function create()
     {
         $kejadian = KejadianBencana::all();
-
         return view('pages.logistik.create', compact('kejadian'));
     }
 
-    // 🔹 simpan logistik
     public function store(Request $request)
     {
         $request->validate([
-            'kejadian_id'  => 'required|exists:kejadian_bencana,id',
-            'nama_barang'  => 'required|string|max:255',
-            'satuan'       => 'required|string|max:50',
-            'stok'         => 'required|numeric|min:0',
-            'sumber'       => 'required|string|max:255',
+            'kejadian_id' => 'required|exists:kejadian_bencana,kejadian_id',
+            'nama_barang' => 'required|string|max:255',
+            'satuan'      => 'required|string|max:50',
+            'stok'        => 'required|numeric|min:0',
+            'sumber'      => 'required|string|max:255',
         ]);
 
         LogistikBencana::create([

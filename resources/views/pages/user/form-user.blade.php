@@ -14,7 +14,7 @@
                 {{ isset($user) ? 'Edit Data User' : 'Tambah User Baru' }}
             </h2>
 
-            <form method="POST" action="{{ isset($user) ? route('user.update', $user->id) : route('user.store') }}">
+            <form method="POST" action="{{ isset($user) ? route('user.update', $user->id) : route('user.store') }}" enctype="multipart/form-data">
                 @csrf
                 @if (isset($user))
                     @method('PUT')
@@ -74,6 +74,23 @@
                     </label>
                     <input type="password" name="password_confirmation" class="form-control border-success-subtle"
                         {{ isset($user) ? '' : 'required' }}>
+                </div>
+
+                {{-- FOTO PROFIL --}}
+                <div class="mb-3">
+                    <label class="fw-semibold text-success">
+                        Foto Profil
+                    </label>
+
+                    @if (isset($user) && $user->photo())
+                        <div class="mb-2">
+                            <img src="{{ asset('storage/' . $user->photo()->file_name) }}" width="100"
+                                class="rounded-circle border">
+                        </div>
+                    @endif
+
+                    <input type="file" name="photo" class="form-control">
+                    <small class="text-muted">jpg / png (max 2MB)</small>
                 </div>
 
                 <div class="d-flex justify-content-between mt-4">

@@ -88,7 +88,7 @@
                             @forelse ($logistik as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->kejadian->nama_bencana ?? '-' }}</td>
+                                    <td>{{ $item->kejadian->jenis_bencana ?? '-' }}</td>
                                     <td>{{ $item->nama_barang }}</td>
                                     <td>{{ $item->satuan }}</td>
                                     <td>

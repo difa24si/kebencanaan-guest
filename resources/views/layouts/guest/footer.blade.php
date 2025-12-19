@@ -24,10 +24,10 @@
             <!-- Link Cepat -->
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-light mb-4">Navigasi</h4>
-                <a class="btn btn-link" href="#">Beranda</a>
-                <a class="btn btn-link" href="#">Tentang Kami</a>
-                <a class="btn btn-link" href="#">Lapor Bencana</a>
-                <a class="btn btn-link" href="#">Donasi</a>
+                <a class="btn btn-link" href="{{ url('dashboard') }}">Beranda</a>
+                <a class="btn btn-link" href="{{ route('tentang.index') }}">Tentang Kami</a>
+                <a class="btn btn-link" href="{{ url('kejadian') }}">Lapor Bencana</a>
+                <a class="btn btn-link" href="{{ url('donasi') }}">Donasi</a>
                 <a class="btn btn-link" href="#">Kontak</a>
             </div>
 
@@ -49,22 +49,22 @@
                 <h4 class="text-light mb-4">Galeri Kegiatan</h4>
                 <div class="row g-2">
                     <div class="col-4">
-                        <img class="img-fluid w-100" src="{{ asset('assets-guest/img/gallery-1.jpg') }}" alt="">
+                        <img class="img-fluid w-100" src="{{ asset('assets-guest/img/bencana1.jpg') }}" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid w-100" src="{{ asset('assets-guest/img/gallery-2.jpg') }}" alt="">
+                        <img class="img-fluid w-100" src="{{ asset('assets-guest/img/bencana2.jpg') }}" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid w-100" src="{{ asset('assets-guest/img/gallery-3.jpg') }}" alt="">
+                        <img class="img-fluid w-100" src="{{ asset('assets-guest/img/bencana3.jpeg') }}" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid w-100" src="{{ asset('assets-guest/img/gallery-4.jpg') }}" alt="">
+                        <img class="img-fluid w-100" src="{{ asset('assets-guest/img/bencana4.jpg') }}" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid w-100" src="{{ asset('assets-guest/img/gallery-5.jpg') }}" alt="">
+                        <img class="img-fluid w-100" src="{{ asset('assets-guest/img/logistics.jpeg') }}" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid w-100" src="{{ asset('assets-guest/img/gallery-6.jpg') }}" alt="">
+                        <img class="img-fluid w-100" src="{{ asset('assets-guest/img/about.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
