@@ -1,57 +1,6 @@
 @extends('layouts.guest.app')
 
 @section('content')
-    {{-- <div id="carouselIndonesia" class="carousel slide mb-4" data-bs-ride="carousel">
-        <div class="carousel-inner">
-
-            <!-- Slide 1 -->
-            <div class="carousel-item active">
-                <img src="https://i.ibb.co/xFD7VvX/indonesia-komodo.jpg" class="d-block w-100"
-                    style="height: 380px; object-fit: cover;" alt="Komodo Indonesia">
-                <div class="carousel-caption bg-dark bg-opacity-50 rounded p-2">
-                    <h5>Pulau Komodo – NTT</h5>
-                </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="carousel-item">
-                <img src="https://i.ibb.co/6P24h7F/borobudur.jpg" class="d-block w-100"
-                    style="height: 380px; object-fit: cover;" alt="Candi Borobudur">
-                <div class="carousel-caption bg-dark bg-opacity-50 rounded p-2">
-                    <h5>Candi Borobudur – Magelang</h5>
-                </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel-item">
-                <img src="https://i.ibb.co/r3wypHv/raja-ampat.jpg" class="d-block w-100"
-                    style="height: 380px; object-fit: cover;" alt="Raja Ampat">
-                <div class="carousel-caption bg-dark bg-opacity-50 rounded p-2">
-                    <h5>Raja Ampat – Papua Barat</h5>
-                </div>
-            </div>
-
-            <!-- Slide 4 -->
-            <div class="carousel-item">
-                <img src="https://i.ibb.co/93pFdcL/bromo.jpg" class="d-block w-100"
-                    style="height: 380px; object-fit: cover;" alt="Gunung Bromo">
-                <div class="carousel-caption bg-dark bg-opacity-50 rounded p-2">
-                    <h5>Gunung Bromo – Jawa Timur</h5>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndonesia" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselIndonesia" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-    </div> --}}
-
     <!-- Carousel Start -->
     <div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
         <div class="owl-carousel header-carousel py-5">
@@ -62,8 +11,8 @@
                             <h1 class="display-1 text-uppercase mb-3">Bantuan Kebencanaan</h1>
                             <p class="fs-5 mb-5">Siaga, Tanggap, dan Tangguh Bersama.</p>
                             <div class="d-flex">
-                                <a class="btn btn-primary py-3 px-4 me-3" href="{{ url('donasi') }}">Donate Now</a>
-                                <a class="btn btn-secondary py-3 px-4" href="{{ route('user.index') }}">Join Us Now</a>
+                                <a class="btn btn-primary py-3 px-4 me-3" href="">Donate Now</a>
+                                <a class="btn btn-secondary py-3 px-4" href="">Join Us Now</a>
                             </div>
                         </div>
                     </div>
@@ -87,7 +36,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="carousel-img">
-                            <img class="w-100" src="{{ asset('assets-guest/img/bencana3.jpeg') }}" alt="Image">
+                            <img class="w-100" src="{{ asset('assets-guest/img/bencana2.jpeg') }}" alt="Image">
                         </div>
                     </div>
                 </div>
@@ -95,11 +44,6 @@
         </div>
     </div>
     <!-- Carousel End -->
-
-    <!-- About Start -->
-
-    <!-- About End -->
-
 
     <!-- Service Start -->
     <div class="container-fluid py-5">
@@ -226,22 +170,27 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="feature-text ps-lg-5">
-                        <h1 class="display-6 mb-4">How We Help Victims</h1>
-                        <p class="fs-5 mb-4">We help build hope by providing humanitarian support in times of need. We
-                            strive to create sustainable solutions that empower communities to grow, rebuild, and thrive.
-                        </p>
-                        <div class="d-flex">
-                            <a class="btn btn-primary py-3 px-4 me-3" href="">Learn More</a>
-                            <a class="btn btn-secondary py-3 px-4" href="">Donate Now</a>
-                        </div>
+                    <p class="section-title bg-white text-start text-primary pe-3">Why Us!</p>
+                    <h1 class="display-6 mb-4 wow fadeIn" data-wow-delay="0.2s">Few Reasons Why People Choosing Us!
+                    </h1>
+                    <p class="mb-4 wow fadeIn" data-wow-delay="0.3s">We believe in creating opportunities and
+                        empowering communities through education, healthcare, and sustainable development. Your support
+                        helps us bring smiles, hope, and a brighter future to those in need.</p>
+                    <p class="text-dark wow fadeIn" data-wow-delay="0.4s"><i
+                            class="fa fa-check text-primary me-2"></i>Justo magna erat amet</p>
+                    <p class="text-dark wow fadeIn" data-wow-delay="0.5s"><i
+                            class="fa fa-check text-primary me-2"></i>Aliqu diam amet diam et eos</p>
+                    <p class="text-dark wow fadeIn" data-wow-delay="0.6s"><i
+                            class="fa fa-check text-primary me-2"></i>Clita erat ipsum et lorem et sit</p>
+                    <div class="d-flex mt-4 wow fadeIn" data-wow-delay="0.7s">
+                        <a class="btn btn-primary py-3 px-4 me-3" href="">Donate Now</a>
+                        <a class="btn btn-secondary py-3 px-4" href="">Join Us Now</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Features End -->
-
 
     <!-- Logistik Start -->
     <div class="container-fluid py-5">
@@ -259,4 +208,50 @@
         </div>
     </div>
     <!-- Logistik End -->
+
+    <!-- Team Start -->
+    <!-- Developer Profile Section Start -->
+    <div class="container-fluid bg-dark text-light py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-4 text-center">
+                    <img src="{{ asset('assets-guest/img/profile.jpg') }}" alt="Foto Pengembang"
+                        class="img-fluid rounded-circle shadow" style="width: 200px; height: 200px; object-fit: cover;">
+                </div>
+
+                <div class="col-lg-8">
+                    <h3 class="text-light mb-3">Identitas Pengembang</h3>
+                    <p class="mb-1"><strong>Nama :</strong> Difa Mardiani</p>
+                    <p class="mb-1"><strong>NIM :</strong> 2457301034</p>
+                    <p class="mb-1"><strong>Program Studi :</strong> Sistem Informasi</p>
+                    <p class="mb-3"><strong>Kampus :</strong> Politeknik Caltex Riau</p>
+
+                    <div class="d-flex align-items-center mt-3 flex-wrap">
+
+                        <a href="#"
+                            class="https://www.linkedin.com/in/difa-mardiani-4464a6399?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                            target="_blank">
+                            <i class="fab fa-linkedin me-2"></i>LinkedIn
+                        </a>
+
+                        <a href="#" class="https://github.com/difa24si/kebencanaan-guest.git" target="_blank">
+                            <i class="fab fa-github me-2"></i>GitHub
+                        </a>
+
+                        <a href="#"
+                            class="https://www.instagram.com/dpakepsyc?igsh=MWdnbXpuanVyNHp0Ng%3D%3D&utm_source=qr"
+                            target="_blank">
+                            <i class="fab fa-instagram me-2"></i>Instagram
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Developer Profile Section End -->
+
+    <!-- Team End -->
 @endsection
