@@ -14,7 +14,7 @@
     <div class="container-box mt-4 bg-light rounded shadow-sm p-4">
 
         <h4 class="fw-bold text-success mb-4">
-            <i class="bi bi-building"></i> Data Posko Bencana
+         Data Posko Bencana
         </h4>
 
         <!-- SEARCH & FILTER -->
@@ -76,7 +76,6 @@
                             <h5 class="fw-bold">{{ $p->nama }}</h5>
 
                             <p class="text-muted mb-1">
-                                <i class="bi bi-geo-alt-fill text-success"></i>
                                 Alamat: {{ $p->alamat }}
                             </p>
 
@@ -90,6 +89,35 @@
                                 Penanggung Jawab:
                                 <strong>{{ $p->penanggung_jawab }}</strong>
                             </p>
+
+                            <!-- TAMBAHAN TOMBOL EDIT DAN HAPUS -->
+                            <hr class="my-3">
+
+                            <!-- TOMBOL ACTION -->
+                            <div class="d-flex justify-content-center gap-2">
+                                <!-- Tombol Edit -->
+                                <a href="{{ route('posko.edit', $p->posko_id) }}"
+                                   class="btn btn-sm btn-primary"
+                                   title="Edit Posko">
+                                    <i class="bi bi-pencil-square"></i> Edit
+                                </a>
+
+                                <!-- Tombol Hapus -->
+                                <a href="#"
+                                   onclick="if(confirm('Hapus {{ $p->nama }}?')) {
+                                        document.getElementById('hapus-form-{{ $p->posko_id }}').submit();
+                                    }"
+                                   class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i> Hapus
+                                </a>
+
+                                <form id="hapus-form-{{ $p->posko_id }}"
+                                      action="{{ route('posko.destroy', $p->posko_id) }}"
+                                      method="POST" style="display: none;">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+                            </div>
 
                         </div>
                     </div>

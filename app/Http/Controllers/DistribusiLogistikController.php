@@ -12,23 +12,29 @@ use App\Models\Media;
 
 class DistribusiLogistikController extends Controller
 {
-    // 1️⃣ tampil data
-    public function index()
-    {
-        $distribusi = DistribusiLogistik::with(['logistik', 'posko', 'media'])->get();
-        return view('pages.distribusi.index', compact('distribusi'));
-    }
+    // Di DistribusiLogistikController@index
+public function index(Request $request)
+{
+    $query = DistribusiLogistik::with(['logistik', 'posko', 'media']);
 
-    // 2️⃣ form tambah
-    public function create()
-    {
-        $logistik = LogistikBencana::all();
-        $posko = PoskoBencana::all();
+    // ... search & filter logic ...
 
-        return view('pages.distribusi.create', compact('logistik', 'posko'));
-    }
+    $distribusi = $query->get();
+    $posko = PoskoBencana::all(); // Untuk filter dropdown
 
-    // 3️⃣ simpan + kurangi stok + upload file
+    return view('pages.distribusi.index', compact('distribusi', 'posko'));
+}
+
+// Di DistribusiLogistikController@create
+public function create()
+{
+    $logistik = LogistikBencana::where('stok', '>', 0)->get(); // Hanya barang dengan stok > 0
+    $posko = PoskoBencana::all();
+
+    return view('pages.distribusi.create', compact('logistik', 'posko'));
+}
+
+    // simpan + kurangi stok + upload file
     public function store(Request $request)
     {
         $request->validate([
@@ -48,7 +54,7 @@ class DistribusiLogistikController extends Controller
                 throw new \Exception('Stok tidak mencukupi');
             }
 
-            // ✅ simpan distribusi
+            // simpan distribusi
             $distribusi = DistribusiLogistik::create(
                 $request->only([
                     'logistik_id',

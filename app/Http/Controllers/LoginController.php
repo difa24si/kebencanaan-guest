@@ -9,13 +9,13 @@ use App\Models\User;
 
 class LoginController extends Controller
 {
-    // 🟢 Tampilkan form login
+    // Tampilkan form login
     public function index()
     {
         return view('pages.user.login');
     }
 
-    // 🟢 Proses login
+    // Proses login
     public function store(Request $request)
     {
         $request->validate([
@@ -34,11 +34,11 @@ class LoginController extends Controller
         // Login user
         Auth::login($user);
 
-        // ✅ Arahkan langsung ke dashboard view (bukan route)
+        //  Arahkan langsung ke dashboard view (bukan route)
         return view('pages.main.dashboard')->with('success', 'Login berhasil!');
     }
 
-    // 🟢 Logout user
+    // Logout user
     public function destroy()
     {
         Auth::logout();

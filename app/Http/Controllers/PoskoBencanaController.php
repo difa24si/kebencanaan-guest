@@ -135,3 +135,4 @@ class PoskoBencanaController extends Controller
         return redirect()->route('posko.index')->with('success', 'Data posko berhasil dihapus!');
     }
 }
+

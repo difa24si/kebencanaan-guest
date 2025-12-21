@@ -20,17 +20,17 @@ class WargaController extends Controller
             });
         }
 
-        // 🧩 Filter Gender
+        //  Filter Gender
         if ($request->gender) {
             $query->where('gender', $request->gender);
         }
 
-        // 🧩 Filter Agama
+        // Filter Agama
         if ($request->agama) {
             $query->where('agama', $request->agama);
         }
 
-        // 📌 Pagination
+        //  Pagination
         $warga = $query->paginate(8);
 
         return view('pages.warga.index', compact('warga'));
@@ -71,7 +71,7 @@ class WargaController extends Controller
     public function edit($id)
     {
         $warga = Warga::findOrFail($id);
-        return view('pages.warga.create', compact('warga'));
+        return view('pages.warga.edit', compact('warga'));
     }
 
     public function update(Request $request, $id)

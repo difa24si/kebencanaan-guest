@@ -19,7 +19,7 @@
         {{-- KEJADIAN RELATION --}}
         <div class="mb-3">
             <label class="form-label">
-                <i class="bi bi-exclamation-triangle-fill"></i> Kejadian Bencana
+             Kejadian Bencana
             </label>
             <select name="kejadian_id" class="form-control">
                 <option value="">-- Pilih Kejadian --</option>
@@ -36,7 +36,7 @@
         {{-- NAMA POSKO --}}
         <div class="mb-3">
             <label class="form-label">
-                <i class="bi bi-house-door-fill"></i> Nama Posko
+                Nama Posko
             </label>
             <input type="text" name="nama" class="form-control"
                    value="{{ old('nama', $posko->nama ?? '') }}">
@@ -46,7 +46,7 @@
         {{-- ALAMAT --}}
         <div class="mb-3">
             <label class="form-label">
-                <i class="bi bi-geo-alt-fill"></i> Alamat
+               Alamat
             </label>
             <textarea name="alamat" class="form-control">{{ old('alamat', $posko->alamat ?? '') }}</textarea>
             @error('alamat') <small class="text-danger">{{ $message }}</small> @enderror
@@ -55,7 +55,7 @@
         {{-- KONTAK --}}
         <div class="mb-3">
             <label class="form-label">
-                <i class="bi bi-telephone-fill"></i> Kontak
+          Kontak
             </label>
             <input type="text" name="kontak" class="form-control"
                    value="{{ old('kontak', $posko->kontak ?? '') }}">
@@ -65,17 +65,17 @@
         {{-- PENANGGUNG JAWAB --}}
         <div class="mb-3">
             <label class="form-label">
-                <i class="bi bi-person-fill-gear"></i> Penanggung Jawab
+            Penanggung Jawab
             </label>
             <input type="text" name="penanggung_jawab" class="form-control"
                    value="{{ old('penanggung_jawab', $posko->penanggung_jawab ?? '') }}">
-            @error('penanggung_jawab') <small class="text-danger">{{ $message }}</small> @enderror
+            @error('penanggung_jawab') {{ $message }}</small> @enderror
         </div>
 
         {{-- FOTO POSKO --}}
         <div class="mb-3">
             <label class="form-label">
-                <i class="bi bi-image-fill"></i> Foto Posko
+             Foto Posko
             </label>
             <input type="file" name="foto" class="form-control">
 

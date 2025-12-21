@@ -76,7 +76,7 @@
                 @forelse ($warga as $item)
                     <div class="col-md-4 col-lg-3">
                         <div class="card border-0 shadow-sm text-center p-3 h-100"
-                             style="border-radius: 15px; transition: 0.3s; background:white;">
+                             style="border-radius: 15px; transition: 0.3s; background:white; position: relative;">
 
                             {{-- Avatar --}}
                             <img src="https://ui-avatars.com/api/?name={{ urlencode($item->nama) }}&background=27ae60&color=fff"
@@ -97,7 +97,27 @@
                                 <p class="mb-1"><i class="bi bi-telephone me-1"></i>{{ $item->phone }}</p>
                                 <p class="mb-1"><i class="bi bi-envelope me-1"></i>{{ $item->email }}</p>
                             </div>
+{{-- TOMBOL EDIT & HAPUS --}}
+<div class="mt-3 pt-3 border-top">
+    <div class="d-flex justify-content-center gap-2">
+        {{-- Tombol Edit --}}
+<a href="/warga/{{ $item->id }}/edit"
+   class="btn btn-sm btn-outline-primary px-3">
+    <i class="bi bi-pencil me-1"></i> Edit
+</a>
 
+{{-- Tombol Hapus --}}
+<form action="/warga/{{ $item->id }}" method="POST"
+      class="d-inline"
+      onsubmit="return confirm('Yakin ingin menghapus data warga ini?');">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="btn btn-sm btn-outline-danger px-3">
+        <i class="bi bi-trash me-1"></i> Hapus
+    </button>
+</form>
+    </div>
+</div>
                         </div>
                     </div>
                 @empty

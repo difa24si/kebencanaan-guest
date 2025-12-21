@@ -8,25 +8,36 @@ use Illuminate\Http\Request;
 class LogistikBencanaController extends Controller
 {
     public function index(Request $request)
-    {
-        $query = LogistikBencana::with('kejadian');
+{
+    $query = LogistikBencana::with('kejadian');
 
-        if ($request->search) {
-            $query->where(function ($q) use ($request) {
-                $q->where('nama_barang', 'like', '%' . $request->search . '%')
-                    ->orWhere('sumber', 'like', '%' . $request->search . '%');
-            });
-        }
-
-        if ($request->kejadian_id) {
-            $query->where('kejadian_id', $request->kejadian_id);
-        }
-
-        $logistik = $query->get();
-        $kejadian = KejadianBencana::all();
-
-        return view('pages.logistik.index', compact('logistik', 'kejadian'));
+    if ($request->search) {
+        $query->where(function ($q) use ($request) {
+            $q->where('nama_barang', 'like', '%' . $request->search . '%')
+                ->orWhere('sumber', 'like', '%' . $request->search . '%');
+        });
     }
+
+    if ($request->kejadian_id) {
+        $query->where('kejadian_id', $request->kejadian_id);
+    }
+
+    // SORTING
+    if ($request->sort == 'stok_terbanyak') {
+        $query->orderBy('stok', 'desc');
+    } elseif ($request->sort == 'stok_terendah') {
+        $query->orderBy('stok', 'asc');
+    } elseif ($request->sort == 'nama_az') {
+        $query->orderBy('nama_barang', 'asc');
+    } else {
+        $query->orderBy('created_at', 'desc');
+    }
+
+    $logistik = $query->get();
+    $kejadian = KejadianBencana::all();
+
+    return view('pages.logistik.index', compact('logistik', 'kejadian'));
+}
 
     public function create()
     {

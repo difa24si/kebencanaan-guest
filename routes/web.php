@@ -55,7 +55,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
 
 Route::middleware(['checkislogin'])->group(function () {
 
-    Route::resource('warga', WargaController::class);
+ Route::resource('warga', \App\Http\Controllers\WargaController::class);
     Route::resource('posko', PoskoBencanaController::class);
     Route::resource('kejadian', KejadianBencanaController::class);
     Route::resource('donasi', DonasiController::class);

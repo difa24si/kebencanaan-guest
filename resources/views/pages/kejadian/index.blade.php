@@ -14,7 +14,7 @@
     <div class="container-box mt-4 bg-light rounded shadow-sm p-4">
 
         <h4 class="fw-bold text-success mb-3">
-            <i class="bi bi-exclamation-triangle-fill"></i> Data Kejadian Bencana
+         Data Kejadian Bencana
         </h4>
 
         <!-- Search + Filter -->

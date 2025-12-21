@@ -22,7 +22,7 @@
 
                 <div class="mb-3">
                     <label class="fw-semibold text-success">
-                        <i class="bi bi-person-badge"></i> Nama Lengkap
+                    Nama Lengkap
                     </label>
                     <input type="text" name="name" class="form-control border-success-subtle"
                         value="{{ old('name', $user->name ?? '') }}" required>
@@ -33,7 +33,7 @@
 
                 <div class="mb-3">
                     <label class="fw-semibold text-success">
-                        <i class="bi bi-envelope-fill"></i> Email
+                    Email
                     </label>
                     <input type="email" name="email" class="form-control border-success-subtle"
                         value="{{ old('email', $user->email ?? '') }}" required>
@@ -44,7 +44,7 @@
 
                 <div class="mb-3">
                     <label class="fw-semibold text-success">
-                        <i class="bi bi-person-gear"></i> Role
+                     Role
                     </label>
                     <select name="role" class="form-control border-success-subtle" required>
                         <option value="admin" {{ old('role', $user->role ?? '') == 'admin' ? 'selected' : '' }}>Admin
@@ -59,7 +59,7 @@
 
                 <div class="mb-3">
                     <label class="fw-semibold text-success">
-                        <i class="bi bi-lock-fill"></i> Password
+                  Password
                     </label>
                     <input type="password" name="password" class="form-control border-success-subtle"
                         {{ isset($user) ? '' : 'required' }}>
@@ -70,7 +70,7 @@
 
                 <div class="mb-3">
                     <label class="fw-semibold text-success">
-                        <i class="bi bi-shield-lock"></i> Verifikasi Password
+                   Verifikasi Password
                     </label>
                     <input type="password" name="password_confirmation" class="form-control border-success-subtle"
                         {{ isset($user) ? '' : 'required' }}>
@@ -95,10 +95,10 @@
 
                 <div class="d-flex justify-content-between mt-4">
                     <button type="submit" class="btn btn-success">
-                        <i class="bi bi-save2-fill"></i> Simpan
+                        Simpan
                     </button>
                     <a href="{{ route('user.index') }}" class="btn btn-warning text-white">
-                        <i class="bi bi-x-circle"></i> Batal
+                        Batal
                     </a>
                 </div>
             </form>

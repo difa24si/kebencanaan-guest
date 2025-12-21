@@ -22,7 +22,7 @@ class User extends Authenticatable
         'password',
     ];
 
-    // ✅ RELASI MEDIA (FOTO PROFIL)
+    // RELASI MEDIA (FOTO PROFIL)
     public function media()
     {
         return $this->hasMany(Media::class, 'ref_id', 'id')

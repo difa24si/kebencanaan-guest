@@ -229,18 +229,17 @@
 
                     <div class="d-flex align-items-center mt-3 flex-wrap">
 
-                        <a href="#"
-                            class="https://www.linkedin.com/in/difa-mardiani-4464a6399?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                        <a href="https://www.linkedin.com/in/difa-mardiani-4464a6399?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
                             target="_blank">
                             <i class="fab fa-linkedin me-2"></i>LinkedIn
                         </a>
 
-                        <a href="#" class="https://github.com/difa24si/kebencanaan-guest.git" target="_blank">
+                        <a href="https://github.com/difa24si"
+                           target="_blank">
                             <i class="fab fa-github me-2"></i>GitHub
                         </a>
 
-                        <a href="#"
-                            class="https://www.instagram.com/dpakepsyc?igsh=MWdnbXpuanVyNHp0Ng%3D%3D&utm_source=qr"
+                        <a href="https://www.instagram.com/dpakepsyc?igsh=MWdnbXpuanVyNHp0Ng%3D%3D&utm_source=qr"
                             target="_blank">
                             <i class="fab fa-instagram me-2"></i>Instagram
                         </a>
