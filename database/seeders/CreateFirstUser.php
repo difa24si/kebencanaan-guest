@@ -14,7 +14,7 @@ class CreateFirstUser extends Seeder
     {
         User::create([
             'name'     => 'difa',
-            'email'    => 'difa24si@mahasiswa.pcr.ac.id',
+            'email'    => 'difamardiani48@gmail.com',
             'role'     => 'admin',
             'password' => Hash::make('difafarel'),
         ]);
