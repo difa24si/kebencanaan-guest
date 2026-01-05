@@ -14,12 +14,12 @@ class CheckIsLogin
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
-    {
-        if (!Auth::check()) {
-		    return redirect()->route('login.index')->withErrors('Silahkan login terlebih dahulu!');
-		}
+    //public function handle(Request $request, Closure $next): Response
+    //{
+    //    if (!Auth::check()) {
+	//	    return redirect()->route('login.index')->withErrors('Silahkan login terlebih dahulu!');
+	//	}
 
-        return $next($request);
-    }
+    //    return $next($request);
+    //}
 }

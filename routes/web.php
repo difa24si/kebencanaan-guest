@@ -44,8 +44,8 @@ Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
 */
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
-    ->name('dashboard.index')
-    ->middleware('checkislogin');
+    ->name('dashboard.index');
+   // ->middleware('checkislogin');
 
 /*
 |--------------------------------------------------------------------------
@@ -53,7 +53,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
 |--------------------------------------------------------------------------
 */
 
-Route::middleware(['checkislogin'])->group(function () {
+//Route::middleware(['checkislogin'])->group(function () {
 
  Route::resource('warga', \App\Http\Controllers\WargaController::class);
     Route::resource('posko', PoskoBencanaController::class);
@@ -62,7 +62,7 @@ Route::middleware(['checkislogin'])->group(function () {
 
     // Distribusi Logistik
    Route::resource('distribusi', DistribusiLogistikController::class);
-});
+//});
 
 /*
 |--------------------------------------------------------------------------
@@ -70,9 +70,9 @@ Route::middleware(['checkislogin'])->group(function () {
 |--------------------------------------------------------------------------
 */
 
-Route::middleware(['checkrole:admin'])->group(function () {
+//Route::middleware(['checkrole:admin'])->group(function () {
     Route::resource('user', UserController::class);
-});
+//});
 
 Route::resource('logistik', LogistikBencanaController::class);
 Route::resource('distribusi-logistik', DistribusiLogistikController::class);
