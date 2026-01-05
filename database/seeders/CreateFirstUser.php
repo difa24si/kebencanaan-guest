@@ -12,6 +12,7 @@ class CreateFirstUser extends Seeder
      */
     public function run(): void
     {
+        
         User::create([
             'name'     => 'difa',
             'email'    => 'difamardiani48@gmail.com',
