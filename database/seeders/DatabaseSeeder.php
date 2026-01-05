@@ -25,8 +25,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             WargaSeeder::class,
             UserSeeder::class,
-            PoskoBencanaSeeder::class,
             KejadianBencanaSeeder::class,
+            PoskoBencanaSeeder::class,
             CreatePoskoBencanaDummy::class,
             CreateKejadianBencanaSeeder::class,
             CreateFirstUser::class,
