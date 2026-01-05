@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             PoskoBencanaSeeder::class,
             KejadianBencanaSeeder::class,
-            CreatePoskoBencana::class,
+            CreatePoskoBencanaDummy::class,
             CreateKejadianBencanaSeeder::class,
             CreateFirstUser::class,
         ]);
